@@ -1,0 +1,45 @@
+---
+title: "Gráficos das medidas realizadas"
+output: pdf_document
+---
+
+Para incluir gráficos das mediddas realizadas, precisamos considerar que temos:
+
+\begin{itemize}
+\item 10 ações;
+\item 7 medidas realizadas;
+\item 8 frequências amostrais.
+\end{itemize}
+
+Isso exige que façamos escolhas sobre as informações que serão apresentadas nos gráficos.
+
+A seguir, apresento 3 alternativas. Não achei nenhuma delas interessante para incluir no artigo.
+
+## Escolher 1 ação e 1 frequência amostral e fazer o gráfico de todas as medidas realizadas:
+
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+library(PerformanceAnalytics)
+load("/Users/tainanboff/Documents/artigos/TCC/ambiente.RData")
+
+med_real_1m <- cbind(VR.1m[,1], rBPCov.1m[,1], MedRV.1m[,1], MinRV.1m[,1])
+colnames(med_real_1m) = c("VR", "VRBP", "MedRV", "MinRV")
+a <- chart.TimeSeries(med_real_1m, main = "Medidas realizadas (ação: ITUB4; frequência amostral: 1 minuto)", ylab = "")
+print(a)
+```
+
+## Escolher 1 medida realizada e 1 frequência amostral e fazer o gráfico de todas as ações:
+
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+b <- chart.TimeSeries(VR.1m, main = "Variância realizada (frequência amostral: 1 minuto)", ylab = "")
+print(b)
+```
+
+## Escolher 1 medida realizada e 1 ação e fazer o grafico de todas as frequências amostrais:
+
+```{r, echo = FALSE, message=FALSE, warning=FALSE}
+med_real_itub4 <- cbind(VR.1m[,1], VR.5m[,1], VR.10m[,1], VR.15m[,1], VR.30m[,1], VR.45m[,1], VR.60m[,1], VR.90m[,1])
+c <- chart.TimeSeries(med_real_itub4, main = "Variância realizada, ação ITUB4", ylab = "")
+print(c)
+```
+
+Se você achar que devemos incluir alguma dessas opções, me avise qual delas para eu fazer todos os gráficos e as legendas.

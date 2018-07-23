@@ -1,0 +1,21 @@
+\usepackage{tabularx}
+\usepackage{booktab}
+
+\footnotesize
+\begin{tabularx}{\textwidth}{lXX}
+\caption{Percentual de retornos não nulos na amostra} \\ \toprule
+Símbolo & Empresa & \% retornos não nulos\\ \midrule
+ITUB4 & Itaú Unibanco Holding S.A. & 77\%\\
+VALE3 & Vale S.A. & 77\%\\
+BBDC4 & Banco Bradesco S.A. & 76\%\\
+LREN3 & Lojas Renner S.A. & 75\%\\
+VALE5 & Vale S.A. & 75\%\\
+BBDC3 & Banco Bradesco S.A. & 56\%\\
+PSSA3 & Porto Seguro S.A. & 56\%\\
+BTOW3 & B2W Companhia Digital & 54\%\\
+CSMG3 & Cia de Saneamento de Minas Gerais - Copasa MG & 49\%\\
+TRPL4 & CTEEP - Cia de transmissão de energia elétrica paulista & 47\%\\
+\multicolumn{3}{p{\textwidth}}{\footnotesize Nota de rodapé.}\\
+\label{table:acoes}\\
+\end{tabularx}
+\normalsize
